@@ -1,3 +1,5 @@
+#clean_duplicates.py removes the duplicate data on db updatation
+
 from mongoengine import *
 connect('live-data')
 

@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+
+
 from __future__ import unicode_literals
 
 from django.db import models
@@ -7,7 +9,7 @@ from django.db import models
 
 from mongoengine import *
 
-
+#To store the tweets, model created with tag and tweet_content fields
 class TwitterData(Document):
     tag = StringField()
     tweet_content = StringField()

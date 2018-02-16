@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '1-wj=1v+-xm!aa2w=8c1wn6y_qpdo=1&uk$w+3d$hx1k7=*#s7'
 
-
+# mongo engine to connect to the live-data mongodatabase
 import  mongoengine
 mongoengine.connect(db= "live-data", host ='localhost')
 
@@ -56,20 +56,22 @@ INSTALLED_APPS = [
 
 ]
 
+
+# cronjobs added to the scheduler to update the db for every 2 hrs and remove the duplicates for every 1hr
 CRONJOBS = [
-    ('* * * * *', 'webapp_mongo.import_script.get_live_data'),
-    ('*/5 * * * *', 'webapp_mongo.clean_duplicates.clean_duplicate_data')
+    ('* */2 * * *', 'webapp_mongo.import_script.get_live_data'),
+    ('* */1 * * *', 'webapp_mongo.clean_duplicates.clean_duplicate_data')
 
 ]
 
 
 
-LOGIN_REDIRECT_URL = 'home-page'
-LOGOUT_URL = 'account_logout'
-ACCOUNT_LOGOUT_REDIRECT_URL = 'account_login'
+# LOGIN_REDIRECT_URL = 'home-page'
+# LOGOUT_URL = 'account_logout'
+# ACCOUNT_LOGOUT_REDIRECT_URL = 'account_login'
 
 
-SITE_ID = 1
+# SITE_ID = 1
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

@@ -1,4 +1,4 @@
-#import_script.py deals with
+#import_script.py  to extract the data according to the keywords list, and add the data to the model.
 
 import logging
 logging.basicConfig(filename='importscript.log',
@@ -24,6 +24,8 @@ from requests.exceptions import ChunkedEncodingError,ConnectionError
 
 
 def get_live_data():
+
+    #twitter app COSUMER KEY,COSUMER_SECRET,ACCESS_TOKEN,ACCESS_TOKEN_SECRET
     CONSUMER_KEY = 'SQBP5hqu3KFAoA8V8kIYvz0ko'
     CONSUMER_SECRET = 'Do4XrWlZmz4d8thD2ZYXdcyDG0pWf1U4c8mi6ol7t8ZRBeGfhi'
     ACCESS_TOKEN = '151356238-WXtfWUZphySy0Em9qizCozVJA9FVue66Pfe2u2Xo'
@@ -33,6 +35,7 @@ def get_live_data():
                           CONSUMER_SECRET,
                           ACCESS_TOKEN,
                           ACCESS_TOKEN_SECRET)
+
 
     keywords = ['technology','india','investing','india']
 
@@ -54,7 +57,8 @@ def get_live_data():
             continue
 
 
-get_live_data()
+
+# get_live_data()
 
 
 
