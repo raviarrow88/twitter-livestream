@@ -13,6 +13,15 @@ Database : MongoDB.
 
 Languages : Python 2.7.
 
+## Intail Requirements
+
+Do create the mongodb database, place it in the settings.py,import_script.py and clean_duplicates.py
+
+```
+from mongoengine import connect
+mongoengine.connect('database_name','localhost)
+
+```
 
 ## Procedure
 
