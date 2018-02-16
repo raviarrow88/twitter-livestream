@@ -53,7 +53,7 @@ def get_live_data():
                         continue
 
         except (ChunkedEncodingError, ConnectionError, Exception):
-            logger.error(Exception)
+            logger.info(Exception)
             continue
 
 
