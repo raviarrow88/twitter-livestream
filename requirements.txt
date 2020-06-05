@@ -1,7 +1,7 @@
 birdy==0.3.2
 certifi==2018.1.18
 chardet==3.0.4
-Django==1.11.10
+Django==1.11.29
 django-allauth==0.35.0
 django-crontab==0.7.1
 django-filter==1.1.0
